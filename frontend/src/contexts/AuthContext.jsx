@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext(null);
 
 // Get the backend URL from environment variables
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+// Remove trailing slash to avoid double slashes in URLs
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || "http://localhost:3000").replace(/\/+$/, "");
 
 /*
  * This provider should export a `user` context state that is 

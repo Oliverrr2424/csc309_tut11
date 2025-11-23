@@ -3,7 +3,8 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 import app from "./index.js";
 
-const server = app.listen(port, () => {
+// Listen on all interfaces (0.0.0.0) for Railway deployment
+const server = app.listen(port, "0.0.0.0", () => {
     console.log(`Server running on port ${port}`);
 });
 
